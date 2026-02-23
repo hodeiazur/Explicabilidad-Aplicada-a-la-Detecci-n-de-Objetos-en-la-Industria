@@ -1,0 +1,16 @@
+path: dataset_yolo
+train: images/train
+val: images/val
+
+names:
+  0: background
+  1: table_top_skin
+  2: battery_holder
+  3: t_connector
+  4: factory_peg_8mm
+  5: forge_round_peg_8mm
+  6: battery_individual
+  7: box
+  8: klt_bin
+  9: bms_b
+  10: bms_a
