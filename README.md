@@ -23,7 +23,8 @@ El proyecto se estructura en torno a dos ejes:
 Sobre cada combinacion de escenario y modelo se aplican cinco tecnicas de explicabilidad (RISE, D-RISE, GradCAM-E, LIME y D-CLOSE), cuyos resultados se evaluan mediante metricas cuantitativas de fidelidad y localizacion.
 
 ## 📂 Estructura del repositorio
-.```
+```
+.
 ├── deteccion_de_humanos_en_video/
 │   ├── Faster/
 │   │   ├── faster_entrenamiento.py          # Entrenamiento de Faster R-CNN
