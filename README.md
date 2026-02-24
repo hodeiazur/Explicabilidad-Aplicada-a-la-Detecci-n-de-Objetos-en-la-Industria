@@ -78,7 +78,7 @@ Se emplea el tracker **SORT** (Simple Online and Realtime Tracking) para mantene
 ### 🏭 Detección de objetos industriales en imágenes sintéticas
 
 Se utilizan imagenes renderizadas sinteticamente (15 escenas), probablemente generadas con un motor de simulacion 3D. El dataset contiene 11 clases de objetos relacionados con un escenario de ensamblaje robotico:
-
+```
 **ID	Clase**
 0	background
 1	table_top_skin
@@ -91,7 +91,7 @@ Se utilizan imagenes renderizadas sinteticamente (15 escenas), probablemente gen
 8	klt_bin
 9	bms_b
 10	bms_a
-
+```
 ## 🤖 Arquitecturas de detección
 
 ### 🔬 Faster R-CNN
