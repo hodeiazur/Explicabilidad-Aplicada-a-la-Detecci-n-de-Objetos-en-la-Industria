@@ -23,7 +23,7 @@ El proyecto se estructura en torno a dos ejes:
 Sobre cada combinacion de escenario y modelo se aplican cinco tecnicas de explicabilidad (RISE, D-RISE, GradCAM-E, LIME y D-CLOSE), cuyos resultados se evaluan mediante metricas cuantitativas de fidelidad y localizacion.
 
 ## 📂 Estructura del repositorio
-.
+.```
 ├── deteccion_de_humanos_en_video/
 │   ├── Faster/
 │   │   ├── faster_entrenamiento.py          # Entrenamiento de Faster R-CNN
@@ -64,7 +64,7 @@ Sobre cada combinacion de escenario y modelo se aplican cinco tecnicas de explic
 │
 ├── LICENSE                                  # AGPL-3.0
 └── README.md
-
+```
 
 ## 🎯 Escenarios de detección
 
@@ -166,14 +166,15 @@ Todas las tecnicas XAI se evaluan con las mismas cinco metricas:
 
 ## ⚙️ Instalacion
 1. Clonar el repositorio:
-
+```
 git clone https://github.com/hodeiazur/Explicabilidad-Aplicada-a-la-Detecci-n-de-Objetos-en-la-Industria.git
 cd Explicabilidad-Aplicada-a-la-Detecci-n-de-Objetos-en-la-Industria
-  
+``` 
   **Nota**: el repositorio utiliza Git LFS para almacenar imagenes, videos y pesos de modelos. Asegurate de tener Git LFS instalado antes de clonar.
 
 2. Crear un entorno virtual e instalar las dependencias:
-3. 
+3.
+```
 python -m venv venv
 source venv/bin/activate  # En Windows: venv\Scripts\activate
 
@@ -182,41 +183,42 @@ pip install ultralytics
 pip install lime shapely albumentations
 pip install opencv-python Pillow scikit-image scikit-learn
 pip install numpy scipy matplotlib seaborn pandas tqdm
-
+```
   Ajusta la version de CUDA (cu118, cu121, etc.) segun tu configuracion de hardware.
 
 ## ▶️ Uso
 ### 🏋️ Entrenamiento
 **Faster R-CNN (deteccion de personas)**:
-
+```
 python deteccion_de_humanos_en_video/Faster/faster_entrenamiento.py
-
+```
 **Faster R-CNN (objetos industriales)**:
-
+```
 python deteccion_de_objetos_en_imagenes/Faster/fasterRCNN.py
-
+```
 **YOLO (deteccion de personas)**:
-
+```
 python deteccion_de_humanos_en_video/yolo/entrenar_yolo.py
-
+```
 **YOLO (objetos industriales)**:
-
+```
 python deteccion_de_objetos_en_imagenes/yolo/yolo-sinteticos.py
-
+```
 ### 🔍 Inferencia con tracking
+```
 python deteccion_de_humanos_en_video/Faster/deteccion_humano_sort_labelHuman_conReal.py
-
+```
 ### 🧾 Evaluacion de explicabilidad
 Los scripts de metricas se encuentran en las carpetas METRICAS/ o metricas/ de cada modulo. Ejemplo para D-RISE sobre Faster R-CNN (humanos):
-
+```
 python deteccion_de_humanos_en_video/Faster/METRICAS/DRISE_main.py
-
+```
 Analogamente para las demas tecnicas:
-
+```
 python deteccion_de_humanos_en_video/Faster/METRICAS/GCAME_main.py
 python deteccion_de_humanos_en_video/Faster/METRICAS/LIME_main.py
 python deteccion_de_humanos_en_video/Faster/METRICAS/DCLOSE_main.py
-  
+```  
   **Nota**: algunos scripts contienen rutas absolutas a datasets que deberan adaptarse a tu entorno local.
 
 ## 📜 Licencia
