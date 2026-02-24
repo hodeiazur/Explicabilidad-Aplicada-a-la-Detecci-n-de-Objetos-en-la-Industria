@@ -23,48 +23,48 @@ El proyecto se estructura en torno a dos ejes:
 Sobre cada combinacion de escenario y modelo se aplican cinco tecnicas de explicabilidad (RISE, D-RISE, GradCAM-E, LIME y D-CLOSE), cuyos resultados se evaluan mediante metricas cuantitativas de fidelidad y localizacion.
 
 ## 📂 Estructura del repositorio
-
 .
 ├── deteccion_de_humanos_en_video/
 │   ├── Faster/
-│   │   ├── faster_entrenamiento.py
-│   │   ├── deteccion_humano_sort_*.py
-│   │   ├── sort.py
-│   │   ├── ground_truth_sinMujerAtras.json
-│   │   ├── cam_ta1_ws2/
-│   │   ├── videos/
-│   │   └── METRICAS/
-│   │       ├── base.py
-│   │       ├── rise.py
-│   │       ├── drise.py
-│   │       ├── gcame.py
-│   │       ├── DRISE_main.py
-│   │       ├── GCAME_main.py
-│   │       ├── LIME_main.py
-│   │       └── DCLOSE_main.py
+│   │   ├── faster_entrenamiento.py          # Entrenamiento de Faster R-CNN
+│   │   ├── deteccion_humano_sort_*.py       # Inferencia con/sin tracker SORT
+│   │   ├── sort.py                          # Tracker SORT
+│   │   ├── ground_truth_sinMujerAtras.json  # Anotaciones ground truth (COCO)
+│   │   ├── cam_ta1_ws2/                     # Frames de camara real
+│   │   ├── videos/                          # Secuencias de video por accion
+│   │   └── METRICAS/                        # Modulos de explicabilidad
+│   │       ├── base.py                      # Generacion de mascaras
+│   │       ├── rise.py                      # RISE
+│   │       ├── drise.py                     # D-RISE
+│   │       ├── gcame.py                     # GradCAM-E
+│   │       ├── DRISE_main.py                # Evaluacion D-RISE
+│   │       ├── GCAME_main.py                # Evaluacion GradCAM-E
+│   │       ├── LIME_main.py                 # Evaluacion LIME
+│   │       └── DCLOSE_main.py               # Evaluacion D-CLOSE
 │   └── yolo/
-│       ├── entrenar_yolo.py
-│       ├── obtener_best_yolo.py
-│       ├── human.yaml
-│       ├── best.pt
-│       └── metricas/
-
+│       ├── entrenar_yolo.py                 # Entrenamiento YOLOv8
+│       ├── obtener_best_yolo.py             # Seleccion del mejor checkpoint
+│       ├── human.yaml                       # Configuracion del dataset (1 clase)
+│       ├── best.pt                          # Pesos del mejor modelo
+│       └── metricas/                        # Modulos de explicabilidad (YOLO)
+│
 ├── deteccion_de_objetos_en_imagenes/
 │   ├── Faster/
-│   │   ├── fasterRCNN.py
-│   │   ├── validacion_faster.py
-│   │   ├── metricas/
-│   │   └── _out_sdrec_01/ ... _out_sdrec_15/
+│   │   ├── fasterRCNN.py                    # Entrenamiento Faster R-CNN
+│   │   ├── validacion_faster.py             # Validacion del modelo
+│   │   ├── metricas/                        # Modulos de explicabilidad
+│   │   └── _out_sdrec_01/ ... _out_sdrec_15/  # Datos sinteticos (15 carpetas)
 │   └── yolo/
-│       ├── yolo-sinteticos.py
-│       ├── yolo-val.py
-│       ├── editar_datos.py
-│       ├── dataset.yaml
-│       ├── best.pt
-│       └── metricas/
-
-├── LICENSE
+│       ├── yolo-sinteticos.py               # Entrenamiento con grid search
+│       ├── yolo-val.py                      # Validacion
+│       ├── editar_datos.py                  # Preprocesado de datos
+│       ├── dataset.yaml                     # Configuracion del dataset (11 clases)
+│       ├── best.pt                          # Pesos del mejor modelo
+│       └── metricas/                        # Modulos de explicabilidad (YOLO)
+│
+├── LICENSE                                  # AGPL-3.0
 └── README.md
+
 
 ## 🎯 Escenarios de detección
 
