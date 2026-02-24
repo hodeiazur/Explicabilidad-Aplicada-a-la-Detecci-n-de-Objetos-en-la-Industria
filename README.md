@@ -154,18 +154,18 @@ Todas las técnicas XAI se evalúan con las mismas cinco métricas:
 | Categoria                | Bibliotecas |
 |--------------------------|-------------|
 | Deep learning            | torch, torchvision |
-| Deteccion YOLO           | ultralytics |
+| Detección YOLO           | ultralytics |
 | Explicabilidad           | lime, shapely |
-| Vision por computador     | opencv-python, Pillow, scikit-image |
+| Visión por computador     | opencv-python, Pillow, scikit-image |
 | Aumento de datos         | albumentations |
-| Computacion cientifica    | numpy, scipy |
-| Evaluacion               | scikit-learn |
-| Visualizacion             | matplotlib, seaborn, pandas |
+| Computación científica    | numpy, scipy |
+| Evaluación               | scikit-learn |
+| Visualización             | matplotlib, seaborn, pandas |
 | Utilidades               | tqdm |
 | Tracking                 | SORT (incluido en el repositorio) |
 
 
-## ⚙️ Instalacion
+## ⚙️ Instalación
 1. Clonar el repositorio:
 ```
 git clone https://github.com/hodeiazur/Explicabilidad-Aplicada-a-la-Detecci-n-de-Objetos-en-la-Industria.git
@@ -185,7 +185,7 @@ pip install lime shapely albumentations
 pip install opencv-python Pillow scikit-image scikit-learn
 pip install numpy scipy matplotlib seaborn pandas tqdm
 ```
-  Ajusta la version de CUDA (cu118, cu121, etc.) segun tu configuracion de hardware.
+  Ajusta la versión de CUDA (cu118, cu121, etc.) segón tu configuración de hardware.
 
 ## ▶️ Uso
 ### 🏋️ Entrenamiento
