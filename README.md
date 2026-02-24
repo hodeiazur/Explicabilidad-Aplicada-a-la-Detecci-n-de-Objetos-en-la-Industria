@@ -1,5 +1,5 @@
 # Explicabilidad Aplicada a la Detección de Objetos en la Industria
-Este repositorio contiene el codigo desarrollado como parte de un Trabajo de Fin de Master (TFM). El proyecto aborda el desarrollo, entrenamiento y evaluacion de modelos de deteccion de objetos y personas, junto con la aplicacion y comparacion sistematica de tecnicas de Inteligencia Artificial Explicable (XAI) en escenarios industriales.
+Este repositorio contiene el código desarrollado como parte de un Trabajo de Fin de Máster (TFM). El proyecto aborda el desarrollo, entrenamiento y evaluación de modelos de detección de objetos y personas, junto con la aplicación y comparación sistemática de técnicas de Inteligencia Artificial Explicable (XAI) en escenarios industriales.
 
 El objetivo de este trabajo es analizar el impacto del uso de un nuevo detector de objetos en la calidad de las explicaciones generadas por las mismas capas de explicabilidad utilizadas en estudios previos, así como evaluar la existencia de métodos de explicabilidad que permitan reducir el tiempo computacional manteniendo la precisión de los modelos analizados.
 
@@ -18,9 +18,9 @@ El objetivo de este trabajo es analizar el impacto del uso de un nuevo detector 
 ## 📌 Descripción general
 El proyecto se estructura en torno a dos ejes:
 
-1. Dos escenarios de deteccion: deteccion de personas en secuencias de video real y deteccion de objetos industriales en imagenes sinteticas.
-2. Dos arquitecturas de deteccion: Faster R-CNN (basado en ResNet50 + FPN) y YOLOv8s.
-Sobre cada combinacion de escenario y modelo se aplican cinco tecnicas de explicabilidad (RISE, D-RISE, GradCAM-E, LIME y D-CLOSE), cuyos resultados se evaluan mediante metricas cuantitativas de fidelidad y localizacion.
+1. Dos escenarios de detección: detección de personas en secuencias de video real y detección de objetos industriales en imágenes sintéticas.
+2. Dos arquitecturas de detección: Faster R-CNN (basado en ResNet50 + FPN) y YOLOv8s.
+Sobre cada combinación de escenario y modelo se aplican cinco técnicas de explicabilidad (RISE, D-RISE, GradCAM-E, LIME y D-CLOSE), cuyos resultados se evaluan mediante métricas cuantitativas de fidelidad y localización.
 
 ## 📂 Estructura del repositorio
 ```
@@ -31,37 +31,37 @@ Sobre cada combinacion de escenario y modelo se aplican cinco tecnicas de explic
 │   │   ├── deteccion_humano_sort_*.py       # Inferencia con/sin tracker SORT
 │   │   ├── sort.py                          # Tracker SORT
 │   │   ├── ground_truth_sinMujerAtras.json  # Anotaciones ground truth (COCO)
-│   │   ├── cam_ta1_ws2/                     # Frames de camara real
-│   │   ├── videos/                          # Secuencias de video por accion
-│   │   └── METRICAS/                        # Modulos de explicabilidad
+│   │   ├── cam_ta1_ws2/                     # Frames de cámara real
+│   │   ├── videos/                          # Secuencias de video por acción
+│   │   └── METRICAS/                        # Módulos de explicabilidad
 │   │       ├── base.py                      # Generacion de mascaras
 │   │       ├── rise.py                      # RISE
 │   │       ├── drise.py                     # D-RISE
 │   │       ├── gcame.py                     # GradCAM-E
-│   │       ├── DRISE_main.py                # Evaluacion D-RISE
-│   │       ├── GCAME_main.py                # Evaluacion GradCAM-E
-│   │       ├── LIME_main.py                 # Evaluacion LIME
-│   │       └── DCLOSE_main.py               # Evaluacion D-CLOSE
+│   │       ├── DRISE_main.py                # Evaluación D-RISE
+│   │       ├── GCAME_main.py                # Evaluación GradCAM-E
+│   │       ├── LIME_main.py                 # Evaluación LIME
+│   │       └── DCLOSE_main.py               # Evaluación D-CLOSE
 │   └── yolo/
 │       ├── entrenar_yolo.py                 # Entrenamiento YOLOv8
-│       ├── obtener_best_yolo.py             # Seleccion del mejor checkpoint
-│       ├── human.yaml                       # Configuracion del dataset (1 clase)
+│       ├── obtener_best_yolo.py             # Selección del mejor checkpoint
+│       ├── human.yaml                       # Configuración del dataset (1 clase)
 │       ├── best.pt                          # Pesos del mejor modelo
-│       └── metricas/                        # Modulos de explicabilidad (YOLO)
+│       └── metricas/                        # Módulos de explicabilidad (YOLO)
 │
 ├── deteccion_de_objetos_en_imagenes/
 │   ├── Faster/
 │   │   ├── fasterRCNN.py                    # Entrenamiento Faster R-CNN
-│   │   ├── validacion_faster.py             # Validacion del modelo
-│   │   ├── metricas/                        # Modulos de explicabilidad
-│   │   └── _out_sdrec_01/ ... _out_sdrec_15/  # Datos sinteticos (15 carpetas)
+│   │   ├── validacion_faster.py             # Validación del modelo
+│   │   ├── metricas/                        # Módulos de explicabilidad
+│   │   └── _out_sdrec_01/ ... _out_sdrec_15/  # Datos sintéticos (15 carpetas)
 │   └── yolo/
 │       ├── yolo-sinteticos.py               # Entrenamiento con grid search
-│       ├── yolo-val.py                      # Validacion
+│       ├── yolo-val.py                      # Validación
 │       ├── editar_datos.py                  # Preprocesado de datos
-│       ├── dataset.yaml                     # Configuracion del dataset (11 clases)
+│       ├── dataset.yaml                     # Configuración del dataset (11 clases)
 │       ├── best.pt                          # Pesos del mejor modelo
-│       └── metricas/                        # Modulos de explicabilidad (YOLO)
+│       └── metricas/                        # Módulos de explicabilidad (YOLO)
 │
 ├── LICENSE                                  # AGPL-3.0
 └── README.md
@@ -71,13 +71,13 @@ Sobre cada combinacion de escenario y modelo se aplican cinco tecnicas de explic
 
 ### 👥 Detección de personas en vídeo
 
-Se trabaja con frames extraidos de camaras reales en un entorno industrial. El dataset incluye secuencias de video con distintas posturas y acciones humanas (de pie, agachado, trabajando, hablando por telefono, etc.). Las anotaciones siguen el formato COCO y el modelo se entrena para una unica clase: **human**.
+Se trabaja con frames extraidos de cámaras reales en un entorno industrial. El dataset incluye secuencias de vídeo con distintas posturas y acciones humanas (de pie, agachado, trabajando, hablando por telefono, etc.). Las anotaciones siguen el formato COCO y el modelo se entrena para una única clase: **human**.
 
 Se emplea el tracker **SORT** (Simple Online and Realtime Tracking) para mantener la identidad de las personas a lo largo de los frames.
 
 ### 🏭 Detección de objetos industriales en imágenes sintéticas
 
-Se utilizan imagenes renderizadas sinteticamente (15 escenas), probablemente generadas con un motor de simulacion 3D. El dataset contiene 11 clases de objetos relacionados con un escenario de ensamblaje robotico:
+Se utilizan imágenes renderizadas sintéticamente (15 escenas), probablemente generadas con un motor de simulacion 3D. El dataset contiene 11 clases de objetos relacionados con un escenario de ensamblaje robótico:
 ```
 ID	Clase
 0	background
@@ -96,8 +96,8 @@ ID	Clase
 
 ### 🔬 Faster R-CNN
 - **Backbone**: ResNet50 + Feature Pyramid Network (FPN).
-- **Variante humanos**: pesos preentrenados en COCO (backbone congelado, transfer learning). 10 epocas, SGD (lr=0.001, momentum=0.9), StepLR.
-- **Variante objetos industriales**: pesos preentrenados en ImageNet (fine-tuning completo). 10 epocas, SGD (lr=0.005, momentum=0.9), StepLR.
+- **Variante humanos**: pesos preentrenados en COCO (backbone congelado, transfer learning). 10 épocas, SGD (lr=0.001, momentum=0.9), StepLR.
+- **Variante objetos industriales**: pesos preentrenados en ImageNet (fine-tuning completo). 10 épocas, SGD (lr=0.005, momentum=0.9), StepLR.
 - **Aumento de datos**: ColorJitter, MotionBlur, GaussianBlur, PixelDropout (humanos); HorizontalFlip, RandomBrightnessContrast, ShiftScaleRotate, Blur, RandomGamma (objetos industriales, via albumentations).
 - **Descargar los modelos**:
    - detección humano: https://drive.google.com/file/d/1UtmQOsVdYUflc7NE8Pfg6KP5zJmhdXzM/view?usp=sharing
@@ -105,47 +105,47 @@ ID	Clase
 
 ### 🚀 YOLO
 - **Modelo base**: YOLOv8s preentrenado (Ultralytics).
-- Entrenamiento mediante **grid search** sobre batch size (8, 16), learning rate (1e-3, 5e-4) y tamano de imagen (640, 512).
-- 50 epocas por configuracion.
+- Entrenamiento mediante **grid search** sobre batch size (8, 16), learning rate (1e-3, 5e-4) y tamaño de imagen (640, 512).
+- 50 épocas por configuración.
 - Optimizador por defecto de Ultralytics (AdamW con cosine annealing).
 
 ## 🧠 Técnicas de explicabilidad
 
-Se implementan cinco tecnicas XAI, adaptadas para funcionar con detectores de objetos:
+Se implementan cinco técnicas XAI, adaptadas para funcionar con detectores de objetos:
 ### RISE (Randomized Input Sampling for Explanation)
-Metodo de perturbacion de caja negra. Genera N mascaras aleatorias binarias sobre la imagen de entrada y observa como varia la puntuacion del modelo. El mapa de saliencia se calcula como la suma ponderada de las mascaras, donde el peso es la confianza del modelo para cada version enmascarada.
+Método de perturbación de caja negra. Genera N máscaras aleatorias binarias sobre la imagen de entrada y observa como varía la puntuación del modelo. El mapa de saliencia se calcula como la suma ponderada de las máscaras, donde el peso es la confianza del modelo para cada versión enmascarada.
 
 ### 🧩 D-RISE (Detection RISE)
-Extension de RISE adaptada a la deteccion de objetos. A diferencia de RISE, el peso de cada mascara incorpora tanto la confianza de la deteccion como el IoU entre la caja predicha y la caja objetivo, lo que produce mapas de saliencia especificos para cada deteccion concreta.
+Extensión de RISE adaptada a la detección de objetos. A diferencia de RISE, el peso de cada mascara incorpora tanto la confianza de la detección como el IoU entre la caja predicha y la caja objetivo, lo que produce mapas de saliencia especificos para cada detección concreta.
 
-- Configuracion tipica: N=5000 mascaras, p=0.25, batch GPU=8.
+- Configuración típica: N=5000 mascaras, p=0.25, batch GPU=8.
 
 ### ⚡ GradCAM-E (Gradient-weighted Class Activation Mapping for Explainability)
-Tecnica de caja blanca basada en gradientes. Utiliza hooks de PyTorch para capturar las activaciones y los gradientes en la capa backbone.body.layer4 de Faster R-CNN. El mapa de activacion se pondera por los gradientes promediados espacialmente y se recorta a la region de interes (bounding box).
+Técnica de caja blanca basada en gradientes. Utiliza hooks de PyTorch para capturar las activaciones y los gradientes en la capa backbone.body.layer4 de Faster R-CNN. El mapa de activación se pondera por los gradientes promediados espacialmente y se recorta a la región de interés (bounding box).
 
 ### 🧩 LIME (Local Interpretable Model-agnostic Explanations)
-Metodo de perturbacion agnostico al modelo. Segmenta la imagen en superpixeles (SLIC, n=200) y aprende un modelo lineal local que explica la prediccion en funcion de la presencia o ausencia de cada superpixel. Se adapta a deteccion mediante un wrapper que convierte las puntuaciones de deteccion en pseudo-probabilidades.
+Método de perturbación agnostico al modelo. Segmenta la imagen en superpíxeles (SLIC, n=200) y aprende un modelo lineal local que explica la predicción en función de la presencia o ausencia de cada superpíxel. Se adapta a detección mediante un wrapper que convierte las puntuaciones de detección en pseudo-probabilidades.
 
-- Configuracion: 1000 muestras perturbadas por imagen.
+- Configuración: 1000 muestras perturbadas por imagen.
 
 ### ⚡ D-CLOSE (Detection Closed-form Local Occlusion Saliency Explanation)
-Metodo determinista basado en oclusion. Para cada superpixel (en dos niveles de granularidad, 100 y 200 segmentos), se enmascara la region a negro y se mide la caida de confianza del detector. La contribucion de cada superpixel es proporcional a la diferencia entre la puntuacion original y la puntuacion con la oclusion.
+Método determinista basado en oclusión. Para cada superpíxel (en dos niveles de granularidad, 100 y 200 segmentos), se enmascara la región a negro y se mide la caída de confianza del detector. La contribución de cada superpíxel es proporcional a la diferencia entre la puntuación original y la puntuación con la oclusión.
 
-## 📊 Metricas de evaluacion
-Todas las tecnicas XAI se evaluan con las mismas cinco metricas:
+## 📊 Métricas de evaluación
+Todas las técnicas XAI se evalúan con las mismas cinco métricas:
 | Metrica                | Tipo           | Descripcion |
 |------------------------|---------------|-------------|
-| Deletion Correlation   | Fidelidad     | Los superpixeles se eliminan de mas a menos saliente. Se mide la correlacion de Pearson entre la saliencia del superpixel y la caida de confianza al eliminarlo. |
-| Insertion Correlation  | Fidelidad     | Partiendo de una imagen difuminada, se revelan los superpixeles de mas a menos saliente. Se mide la correlacion entre la saliencia y la ganancia de confianza. |
-| Pointing Game          | Localizacion  | Comprueba si el pixel de maxima activacion del mapa de saliencia cae dentro de la caja ground truth (acierto/fallo binario). |
-| EBPG                   | Localizacion  | Fraccion de la energia total del mapa de saliencia que se concentra dentro de la caja ground truth (valor continuo entre 0 y 1). |
-| Sparsity               | Concentracion | Mide lo concentrado (no difuso) que es el mapa de saliencia. Valores altos indican explicaciones mas focalizadas. |
+| Deletion Correlation   | Fidelidad     | Los superpíxeles se eliminan de más a menos saliente. Se mide la correlación de Pearson entre la saliencia del superpíxel y la caída de confianza al eliminarlo. |
+| Insertion Correlation  | Fidelidad     | Partiendo de una imagen difuminada, se revelan los superpíxeles de mas a menos saliente. Se mide la correlación entre la saliencia y la ganancia de confianza. |
+| Pointing Game          | Localizacion  | Comprueba si el píxel de maxima activacion del mapa de saliencia cae dentro de la caja ground truth (acierto/fallo binario). |
+| EBPG                   | Localizacion  | Fracción de la energia total del mapa de saliencia que se concentra dentro de la caja ground truth (valor continuo entre 0 y 1). |
+| Sparsity               | Concentracion | Mide lo concentrado (no difuso) que es el mapa de saliencia. Valores altos indican explicaciones más focalizadas. |
 
-## 💻 Requisitos tecnicos
+## 💻 Requisitos técnicos
 
 ### Hardware
 - **GPU con CUDA**: necesaria para el entrenamiento y recomendada para la inferencia. Los scripts utilizan torch.cuda de forma generalizada.
-- Se recomienda un minimo de **8-16 GB de VRAM** para la generacion de mapas D-RISE con batches de GPU.
+- Se recomienda un mínimo de **8-16 GB de VRAM** para la generación de mapas D-RISE con batches de GPU.
 
 ### Software
 - **Python** 3.9 o superior.
@@ -171,7 +171,7 @@ Todas las tecnicas XAI se evaluan con las mismas cinco metricas:
 git clone https://github.com/hodeiazur/Explicabilidad-Aplicada-a-la-Detecci-n-de-Objetos-en-la-Industria.git
 cd Explicabilidad-Aplicada-a-la-Detecci-n-de-Objetos-en-la-Industria
 ``` 
-  **Nota**: el repositorio utiliza Git LFS para almacenar imagenes, videos y pesos de modelos. Asegurate de tener Git LFS instalado antes de clonar.
+  **Nota**: el repositorio utiliza Git LFS para almacenar imágenes, vídeos y pesos de modelos. Asegúrate de tener Git LFS instalado antes de clonar.
 
 2. Crear un entorno virtual e instalar las dependencias:
 
@@ -189,7 +189,7 @@ pip install numpy scipy matplotlib seaborn pandas tqdm
 
 ## ▶️ Uso
 ### 🏋️ Entrenamiento
-**Faster R-CNN (deteccion de personas)**:
+**Faster R-CNN (detección de personas)**:
 ```
 python deteccion_de_humanos_en_video/Faster/faster_entrenamiento.py
 ```
@@ -197,7 +197,7 @@ python deteccion_de_humanos_en_video/Faster/faster_entrenamiento.py
 ```
 python deteccion_de_objetos_en_imagenes/Faster/fasterRCNN.py
 ```
-**YOLO (deteccion de personas)**:
+**YOLO (detección de personas)**:
 ```
 python deteccion_de_humanos_en_video/yolo/entrenar_yolo.py
 ```
@@ -205,25 +205,25 @@ python deteccion_de_humanos_en_video/yolo/entrenar_yolo.py
 ```
 python deteccion_de_objetos_en_imagenes/yolo/yolo-sinteticos.py
 ```
-### 🔍 Inferencia con tracking
+### 🔍 Inferéncia con tracking
 ```
 python deteccion_de_humanos_en_video/Faster/deteccion_humano_sort_labelHuman_conReal.py
 ```
-### 🧾 Evaluacion de explicabilidad
-Los scripts de metricas se encuentran en las carpetas METRICAS/ o metricas/ de cada modulo. Ejemplo para D-RISE sobre Faster R-CNN (humanos):
+### 🧾 Evaluación de explicabilidad
+Los scripts de métricas se encuentran en las carpetas METRICAS/ o metricas/ de cada módulo. Ejemplo para D-RISE sobre Faster R-CNN (humanos):
 ```
 python deteccion_de_humanos_en_video/Faster/METRICAS/DRISE_main.py
 ```
-Analogamente para las demas tecnicas:
+Análogamente para las demas tecnicas:
 ```
 python deteccion_de_humanos_en_video/Faster/METRICAS/GCAME_main.py
 python deteccion_de_humanos_en_video/Faster/METRICAS/LIME_main.py
 python deteccion_de_humanos_en_video/Faster/METRICAS/DCLOSE_main.py
 ```  
-  **Nota**: algunos scripts contienen rutas absolutas a datasets que deberan adaptarse a tu entorno local.
+  **Nota**: algunos scripts contienen rutas absolutas a datasets que deberán adaptarse a tu entorno local.
 
 ## 📜 Licencia
-Este proyecto se distribuye bajo la licencia GNU Affero General Public License v3.0 (AGPL-3.0). Consulta el archivo LICENSE para mas detalles.
+Este proyecto se distribuye bajo la licencia GNU Affero General Public License v3.0 (AGPL-3.0). Consulta el archivo LICENSE para más detalles.
 
 
 ## 👤 Autor
