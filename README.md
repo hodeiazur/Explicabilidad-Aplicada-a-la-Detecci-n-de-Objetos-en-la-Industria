@@ -226,5 +226,5 @@ python deteccion_de_humanos_en_video/Faster/METRICAS/DCLOSE_main.py
 Este proyecto se distribuye bajo la licencia GNU Affero General Public License v3.0 (AGPL-3.0). Consulta el archivo LICENSE para más detalles.
 
 
-## 👤 Autor
+## 👤 Autora
 Hodei Azurmendi Hormaetxe
